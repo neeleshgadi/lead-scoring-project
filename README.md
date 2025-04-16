@@ -1,78 +1,70 @@
-🧠 Lead Scoring System – Machine Learning Powered
-🚀 What is This?
-A machine learning-based Lead Scoring Model that ranks users from Low → Medium → High based on their likelihood to convert (place an order) on a food ordering website. It helps prioritize leads so businesses can focus on high-value customers and boost conversion rates.
+# Lead Scoring System – Machine Learning Powered 🚀
 
-🏗️ How It Works (Noob-Friendly 🧃)
-1. Collect Data:
-Behavioral features like:
+## Overview
+A machine learning-based lead scoring model designed to rank users from **Low → Medium → High** based on their likelihood to convert (place an order) on a food ordering website. The system helps businesses prioritize high-value customers and boost conversion rates.
 
-✅ Session Time
+## How It Works 🏗️
+1. **Data Collection**: Collect behavioral features such as:
+   - **Session Time**
+   - **Order Frequency**
+   - **Cart Abandonment**
+   - **Total Spend**
 
-✅ Order Frequency
+2. **Data Preprocessing**:
+   - Fill missing values.
+   - Encode categorical features using `LabelEncoder`.
+   - Scale numerical features for optimal model performance.
 
-✅ Cart Abandonment
+3. **Model Training**:
+   - Use **Random Forest Classifier** to detect conversion patterns.
 
-✅ Total Spend
+4. **Prediction & Lead Scoring**:
+   - Predict the likelihood of conversion and calculate the lead score (0–100).
+   - Classify leads into:
+     - **High** (70+)
+     - **Medium** (40–70)
+     - **Low** (<40)
 
-2. Clean & Prepare:
-Fill missing values
+5. **Save & Export**:
+   - Save results to a **CSV** file.
+   - Save the trained model and preprocessing tools using **Joblib**.
 
-Encode categories with LabelEncoder
+---
 
-Scale features for model performance
+## Example Output 🎯
 
-3. Train Model:
-Use Random Forest Classifier to detect conversion patterns
+| User ID | Order Frequency | Session Time | Lead Score | Lead Quality |
+|---------|-----------------|--------------|------------|--------------|
+| 123     | 3/week          | 5 mins       | 88         | High         |
+| 456     | 1/week          | 2 mins       | 45         | Medium       |
+| 789     | None            | 1 min        | 25         | Low          |
 
-4. Predict & Score:
-Predict probability of conversion
+---
 
-Calculate Lead Score (0–100) using model + feature importance
+## Key Features Influencing Score 🔥
 
-Classify leads:
+- **Order Frequency** (most impact)
+- **Cart Abandonment Rate**
+- **Session Duration**
+- **Total Spend**
+- **Device Type**
 
-High (70+)
+---
 
-Medium (40–70)
+## Files in the Repository 📂
 
-Low (<40)
+- **`lead_scoring_model.pkl`**: Trained machine learning model.
+- **`scaler.pkl`**: Feature scaling tool used during training.
+- **`label_encoder.pkl`**: Label encoder for categorical data.
+- **`lead_scoring_results.csv`**: Final lead scores and classifications.
+- **`lead_scoring.ipynb`**: Full source code for the project.
+- **`lead_scoring_synthetic.csv`**: A synthetic dataset for training the model.
 
-5. Save & Export:
-Save results to CSV
+---
 
-Save trained model and encoders with joblib
+## How to Use 📋
 
-🎯 Example Output
-
-User ID	Order Freq	Session Time	Lead Score	Lead Quality
-123	3/week	5 mins	88	High
-456	1/week	2 mins	45	Medium
-789	None	1 min	25	Low
-📌 Top Features Influencing Score
-🔥 Order Frequency (most impact)
-
-😬 Cart Abandonment Rate
-
-⏳ Session Duration
-
-💰 Total Spend
-
-📱 Device Type
-
-💾 Files in Repo
-lead_scoring_model.pkl: Trained model
-
-scaler.pkl, label_encoder.pkl: Preprocessing tools
-
-lead_scoring_results.csv: Final lead scores and labels
-
-lead_scoring.ipynb: Full source code
-
-lead_scoring_synthetic.csv : Dataset
-
-✅ Why Use This?
-Tracks real customer behavior
-
-Helps marketing teams act fast
-
-Improves ROI and reduces time wasted on low-quality leads
+1. **Clone this Repository**:
+   ```bash
+   git clone https://github.com/your-username/lead-scoring-system.git
+   cd lead-scoring-system
